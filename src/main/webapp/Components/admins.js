@@ -23,7 +23,7 @@ $(document).on("click","#btnSave", function(event) {
         return; 
     } 
 
-    // if hidItemIDSave value is null set as POST else set as PUT
+    // if hidAdminIDSave value is null set as POST else set as PUT
     var type = ($("#hidAdminIDSave").val() == "") ? "POST" : "PUT";
 
     // ajax communication
@@ -73,10 +73,9 @@ function onAdminSaveComplete(response, status) {
 }
 
 // UPDATE
-//to identify the update button we didn't use an id we used a class
 $(document).on("click", ".btnUpdate", function(event) 
 { 
-    //get item id from the data-itemid attribute in update button
+    //get user id from the data-userid attribute in update button
     $("#hidAdminIDSave").val($(this).data('userid')); 
     //get data from <td> element
     $("#firstName").val($(this).closest("tr").find('td:eq(1)').text()); 
@@ -134,43 +133,43 @@ function onAdminDeleteComplete(response, status) {
 
 // VALIDATION
 function validateAdminForm() { 
-    // CODE 
+    // FIRSTNAME
     if ($("#firstName").val().trim() == "") 
     { 
         return "Insert First Name."; 
     } 
     
-    // NAME 
+    // LASTNAME 
     if ($("#lastName").val().trim() == "") 
     { 
         return "Insert Last Name."; 
     } 
     
-    // PRICE
+    // EMAIL
     if ($("#email").val().trim() == "") 
     { 
         return "Insert Email."; 
     } 
     
-    // PRICE
+    // MOBILE
     if ($("#mobile").val().trim() == "") 
     { 
         return "Insert Mobile."; 
     }
     
-    // PRICE
+    // SERVICENO
     if ($("#serviceNo").val().trim() == "") 
     { 
         return "Insert Service Number."; 
     }
     
-    // PRICE
+    // DEPARTMENT
     if ($("#department").val().trim() == "") 
     { 
         return "Insert Department."; 
     }
     
-    // PRICE
+    // POSITION
     if ($("#position").val().trim() == "") 
     { 
         return "Insert Position."; 
